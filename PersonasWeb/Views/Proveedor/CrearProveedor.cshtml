@@ -1,0 +1,55 @@
+﻿@model CEBodyPlanet.Models.Proveedor
+@{
+    ViewData["Title"] = "Crear Proveedor";
+}
+
+<div class="container-lg col-4">
+    <h1>Registrar Persona</h1>
+    <form asp-action="CrearProveedor">
+        <!-- DNI -->
+        <div class="input-group mb-3">
+            <label asp-for="Cuit_proveedor" class="input-group-text">@Html.DisplayFor(m => m.Domicilio)</label>
+            <input asp-for="Cuit_proveedor" type="text" class="form-control" placeholder="Ingresar CUIT" id="CUIT">
+        </div>
+        <!-- Nombre -->
+        <div class="input-group mb-3">
+            <label asp-for="Nombre" class="input-group-text">@Html.DisplayFor(m => m.Nombre)</label>
+            <input asp-for="Nombre" type="text" class="form-control" placeholder="Ingresar Nombre" id="nombre">
+        </div>
+        <!-- Apellido -->
+        <div class="input-group mb-3">
+            <label asp-for="Apellido" class="input-group-text">@Html.DisplayFor(m => m.Apellido)</label>
+            <input asp-for="Apellido" type="text" class="form-control" placeholder="Ingresar Apellido" id="apellido">
+        </div>
+        <!-- Telefono -->
+        <div class="input-group mb-3">
+            <label asp-for="Telefono" class="input-group-text">@Html.DisplayFor(m => m.Telefono)</label>
+            <input asp-for="Telefono" type="text" class="form-control" placeholder="Ingresar Telefono/Celular" id="telefono">
+        </div>
+        <!-- Mail -->
+        <div class="input-group mb-3">
+            <label asp-for="Mail" class="input-group-text">@Html.DisplayFor(m => m.Mail)</label>
+            <input asp-for="Mail" type="text" class="form-control" placeholder="Ingresar Mail" id="mail">
+        </div>
+       
+        <!-- Domicilio -->
+        <div class="input-group mb-3">
+            <label asp-for="Domicilio" class="input-group-text">@Html.DisplayFor(m => m.Domicilio)</label>
+            <input asp-for="Domicilio" type="text" class="form-control" placeholder="Ingresar Domicilio" id="domicilio">
+        </div>
+
+        <!-- Ciudad -->
+        <div class="form-group mb-3 mt-3">
+            
+            <label asp-for="Ciudad" class="input-group-text">@Html.DisplayFor(m => m.Ciudad)</label>
+                
+            @Html.DropDownListFor(m => m.Ciudad,
+
+            new SelectList((System.Collections.IEnumerable)ViewData["Ciudades"], "Id_Ciudad", "Nombre"),
+
+            new { @class = "form-select" })
+    
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>

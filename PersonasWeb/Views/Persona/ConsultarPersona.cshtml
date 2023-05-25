@@ -1,0 +1,11 @@
+﻿@model CEBodyPlanet.Models.Persona
+@{
+    ViewData["Title"] = "Consultar Persona";
+}
+
+<h1>Pantalla para consultar Personas</h1>
+<p>Nombre: @Html.DisplayFor(m => m.Nombre_Persona)</p>
+<p>Apellido: @Html.DisplayFor(m => m.Apellido_Persona)</p>
+<p>Fecha Nacimiento: @Html.DisplayFor(m => m.FechaNacimiento)</p>
+<p>Sexo: @Html.DisplayFor(m => m.Sexo)</p>
+<p>Ciudad: @Html.DisplayFor(m => m.Ciudad.Nombre)</p>

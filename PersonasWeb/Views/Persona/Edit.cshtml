@@ -1,0 +1,94 @@
+﻿@model CEBodyPlanet.Models.Persona
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Persona</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id_Persona" />
+
+            <!-- DNI -->
+        <div class="input-group mb-3">
+            <label asp-for="DNI_Persona" class="input-group-text">@Html.DisplayFor(m => m.DNI_Persona)</label>
+            <input asp-for="DNI_Persona" type="text" class="form-control" placeholder="Ingresar DNI" id="DNI">
+        </div>
+        <!-- Nombre -->
+        <div class="input-group mb-3">
+            <label asp-for="Nombre_Persona" class="input-group-text">@Html.DisplayFor(m => m.Nombre_Persona)</label>
+            <input asp-for="Nombre_Persona" type="text" class="form-control" placeholder="Ingresar Nombre" id="nombre">
+        </div>
+        <!-- Apellido -->
+        <div class="input-group mb-3">
+            <label asp-for="Apellido_Persona" class="input-group-text">@Html.DisplayFor(m => m.Apellido_Persona)</label>
+            <input asp-for="Apellido_Persona" type="text" class="form-control" placeholder="Ingresar Apellido" id="apellido">
+        </div>
+        <!-- Fecha de nacimiento -->
+        <div class="input-group mb-3">
+            <label asp-for="FechaNacimiento" class="input-group-text">@Html.DisplayFor(m => m.FechaNacimiento)</label>
+            <input asp-for="FechaNacimiento" type="date" class="form-control" id="fechaNacimiento">
+        </div>
+        <!-- Telefono -->
+        <div class="input-group mb-3">
+            <label asp-for="Telefono_Persona" class="input-group-text">@Html.DisplayFor(m => m.Telefono_Persona)</label>
+            <input asp-for="Telefono_Persona" type="text" class="form-control" placeholder="Ingresar Telefono/Celular" id="telefono">
+        </div>
+        <!-- Mail -->
+        <div class="input-group mb-3">
+            <label asp-for="Mail_Persona" class="input-group-text">@Html.DisplayFor(m => m.Mail_Persona)</label>
+            <input asp-for="Mail_Persona" type="text" class="form-control" placeholder="Ingresar Mail/Celular" id="mail">
+        </div>
+       
+        <!-- Domicilio -->
+        <div class="input-group mb-3">
+            <label asp-for="Domicilio_Persona" class="input-group-text">@Html.DisplayFor(m => m.Domicilio_Persona)</label>
+            <input asp-for="Domicilio_Persona" type="text" class="form-control" placeholder="Ingresar Domicilio" id="domicilio">
+        </div>
+
+                <!-- Genero -->
+                <div class="form-group">
+                    <label asp-for="Sexo" class="control-label">Genero</label>
+                    @foreach (var sexo in Enum.GetValues(typeof(Sexo)))
+                    {
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <label>
+                                <input type="radio" asp-for="Sexo" value="@sexo" />
+                                @sexo
+                            </label>
+                        </div>
+                    }
+                    <span asp-validation-for="Sexo" class="text-danger"></span>
+                </div>
+                <!-- Ciudad -->
+                <div class="form-group mb-3 mt-3">
+
+                    <label asp-for="Ciudad" class="input-group-text">@Html.DisplayFor(m => m.Ciudad)</label>
+
+                    @Html.DropDownListFor(m => m.Id_Ciudad,
+
+                    new SelectList((System.Collections.IEnumerable)ViewData["Ciudades"], "Id_Ciudad", "Nombre"),
+
+                    new { @class = "form-select" })
+
+                </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

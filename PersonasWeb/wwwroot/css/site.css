@@ -1,0 +1,118 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+img {
+    width: 45px;
+}
+
+.container-card {
+    align-items: center;
+    padding: 30px;
+    border-color: black;
+    align-content: center;
+}
+
+.card {
+    align-items: center;
+    border-color: black;
+    background-color: darkorange;
+    padding: 25px;
+}
+
+.container-2 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 50%;
+    padding: 20px;
+}
+
+.theme-features {
+
+    padding:30px;
+    max-width: 500%;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-container {
+    max-width: 100%;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+}
+
+/*Pagina de ABMs*/
+/* Center form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    /* Form style */
+    form .form-label {
+        font-weight: bold;
+        color: #fff;
+    }
+
+    form .form-control {
+        margin-bottom: 1rem;
+        background-color: #f7f7f7;
+        border-color: #fff;
+        color: #333;
+    }
+
+    form .form-select {
+        margin-bottom: 1rem;
+        background-color: #f7f7f7;
+        border-color: #fff;
+        color: #333;
+    }
+
+/* Button style */
+.btn-primary {
+    margin-top: 1rem;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+    .btn-primary:hover {
+        background-color: #0069d9;
+        border-color: #0062cc;
+    }
+
+    .btn-primary:focus {
+        box-shadow: 0 0 0 0.25rem rgba(38, 143, 255, 0.5);
+    }
+
+  
+  
